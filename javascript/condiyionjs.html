@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Conditional statements are written by connecting two propositions with the words if and then. For example, "if it is winter time, then you will likely hear Christmas carols." is a conditional statement.
+
+        // if ..............executes a block of code only if the specified condition is true
+
+        let age=23;
+        if(age>=18){
+            console.log("valid age for vote casting!");
+        }
+        //
+        let myage =12;
+        if(myage<30){
+            console.log("wait for next year");
+        }
+        else{
+            console.log("you are elegible for voting!");
+        }
+        //The switch statement evaluates an expression, matching the expression's value against a series of case clauses, and executes statements after the first case clause with a matching value, until a break statement is encountered.
+
+        let grade="A";
+        switch(grade){
+            case 'A':result="first division";
+            break;
+             case 'B':result="second division";
+            break;
+             case 'C':result="third division";
+            break;
+             case 'D':result="fourth division";
+            break;
+            default:result="fail";
+        }
+        console.log(result);
+////
+//user input
+//let marks=prompt("enter marks:");
+//   let marks=45;
+//   if(marks>60){
+//     console.log("first div Marks");
+//   }
+//   else if(marks<60&& marks>=40){
+//     console.log("second div Marks");
+//   }
+//   else if(marks<40&& marks>=30){
+//     console.log("third div Marks");
+//   }
+//   else{
+//     console.log("fail");
+//   }
+
+  //
+  let subjectlist=["maths","mech","electronic","dsa","wd"];
+  for(let i=0;i<subjectlist.length;i++){
+    console.log(subject[i]);
+  }
+  let marks=100;
+  
+    </script>
+</body>
+</html>

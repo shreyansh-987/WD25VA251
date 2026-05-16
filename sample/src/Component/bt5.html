@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .employee-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Employee Management System</h1>
+
+        <!-- Input Fields -->
+
+        <input type="text" id="name" placeholder="Enter Employee Name">
+
+        <input type="text" id="empId" placeholder="Enter Employee ID">
+
+        <input type="number" id="salary" placeholder="Enter Salary">
+
+        <input type="text" id="department" placeholder="Enter Department">
+
+        <!-- Add Employee Button -->
+
+        <button onclick="addEmployee()">
+            Add Employee
+        </button>
+
+        <hr>
+
+        <!-- Operation Buttons -->
+
+        <button onclick="displayEmployees()">
+            Display All Employees
+        </button>
+
+        <button onclick="filterEmployees()">
+            Salary > ₹50,000
+        </button>
+
+        <button onclick="totalSalary()">
+            Total Salary
+        </button>
+
+        <button onclick="averageSalary()">
+            Average Salary
+        </button>
+
+        <button onclick="countDepartment()">
+            Count by Department
+        </button>
+
+        <!-- Output Section -->
+
+        <div id="output" class="output"></div>
+
+    </div>
+
+    <script>
+
+        // Array to store employee objects
+        let employees = [];
+
+        // Function to add employee
+        function addEmployee() {
+
+            let name = document.getElementById("name").value;
+            let empId = document.getElementById("empId").value;
+            let salary = parseFloat(document.getElementById("salary").value);
+            let department = document.getElementById("department").value;
+
+            // Employee object
+            let employee = {
+                name: name,
+                empId: empId,
+                salary: salary,
+                department: department
+            };
+
+            // Add object to array
+            employees.push(employee);
+
+            alert("Employee Added Successfully!");
+
+            // Clear fields
+            document.getElementById("name").value = "";
+            document.getElementById("empId").value = "";
+            document.getElementById("salary").value = "";
+            document.getElementById("department").value = "";
+        }
+
+        // Display all employees
+        function displayEmployees() {
+
+            let output = "<h2>All Employees</h2>";
+
+            for (let emp of employees) {
+
+                output += `
+                    <div class="employee-card">
+                        <p><strong>Name:</strong> ${emp.name}</p>
+                        <p><strong>ID:</strong> ${emp.empId}</p>
+                        <p><strong>Salary:</strong> ₹${emp.salary}</p>
+                        <p><strong>Department:</strong> ${emp.department}</p>
+                    </div>
+                `;
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+        // Filter employees with salary > 50000
+        function filterEmployees() {
+
+            let filtered = employees.filter(emp => emp.salary > 50000);
+
+            let output = "<h2>Employees with Salary > ₹50,000</h2>";
+
+            filtered.forEach(emp => {
+
+                output += `
+                    <div class="employee-card">
+                        <p><strong>Name:</strong> ${emp.name}</p>
+                        <p><strong>Salary:</strong> ₹${emp.salary}</p>
+                    </div>
+                `;
+            });
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+        // Calculate total salary payout
+        function totalSalary() {
+
+            let total = 0;
+
+            for (let emp of employees) {
+                total += emp.salary;
+            }
+
+            document.getElementById("output").innerHTML = `
+                <h2>Total Salary Payout</h2>
+                <p><strong>Total:</strong> ₹${total}</p>
+            `;
+        }
+
+        // Calculate average salary
+        function averageSalary() {
+
+            let total = 0;
+
+            for (let emp of employees) {
+                total += emp.salary;
+            }
+
+            let average = total / employees.length;
+
+            document.getElementById("output").innerHTML = `
+                <h2>Average Salary</h2>
+                <p><strong>Average Salary:</strong> ₹${average.toFixed(2)}</p>
+            `;
+        }
+
+        // Count employees department-wise
+        function countDepartment() {
+
+            let dept = prompt("Enter Department Name:");
+
+            let count = 0;
+
+            for (let emp of employees) {
+
+                if (emp.department.toLowerCase() === dept.toLowerCase()) {
+                    count++;
+                }
+            }
+
+            document.getElementById("output").innerHTML = `
+                <h2>Department Count</h2>
+                <p>
+                    Employees in <strong>${dept}</strong> Department:
+                    <strong>${count}</strong>
+                </p>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>

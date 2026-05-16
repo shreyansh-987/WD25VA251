@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation & Event Handling</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+            transition: 0.4s;
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            max-width: 700px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #333;
+            transition: 0.3s;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Heading -->
+        <h1 id="mainHeading">
+            Welcome to JavaScript DOM
+        </h1>
+
+        <!-- Input Field -->
+        <input type="text"
+        id="messageInput"
+        placeholder="Enter your message">
+
+        <br>
+
+        <!-- Buttons -->
+        <button id="changeTextBtn">
+            Change Heading Text
+        </button>
+
+        <button id="bgColorBtn">
+            Change Background Color
+        </button>
+
+        <button id="fontSizeBtn">
+            Change Font Size
+        </button>
+
+        <button id="toggleParaBtn">
+            Show/Hide Paragraph
+        </button>
+
+        <button id="resetBtn">
+            Reset Page
+        </button>
+
+        <!-- Paragraph -->
+        <p id="paragraph">
+            This paragraph will dynamically change using JavaScript DOM manipulation and event handling.
+        </p>
+
+    </div>
+
+    <script>
+
+        // Selecting Elements
+        const heading = document.getElementById("mainHeading");
+        const input = document.getElementById("messageInput");
+        const paragraph = document.getElementById("paragraph");
+
+        const changeTextBtn = document.getElementById("changeTextBtn");
+        const bgColorBtn = document.getElementById("bgColorBtn");
+        const fontSizeBtn = document.getElementById("fontSizeBtn");
+        const toggleParaBtn = document.getElementById("toggleParaBtn");
+        const resetBtn = document.getElementById("resetBtn");
+
+        // Change Heading Text using onclick
+        changeTextBtn.onclick = function () {
+
+            let message = input.value;
+
+            if (message === "") {
+                heading.innerHTML = "Please enter a message!";
+            }
+            else {
+                heading.innerHTML = message;
+            }
+        };
+
+        // Change Background Color using addEventListener
+        bgColorBtn.addEventListener("click", function () {
+
+            let colors = ["#ffcccc", "#ccffcc", "#ccccff", "#fff3cd", "#d4edda"];
+
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.style.backgroundColor = randomColor;
+        });
+
+        // Change Font Size using onclick
+        fontSizeBtn.onclick = function () {
+
+            heading.style.fontSize = "50px";
+            paragraph.style.fontSize = "24px";
+        };
+
+        // Show/Hide Paragraph
+        toggleParaBtn.addEventListener("click", function () {
+
+            if (paragraph.style.display === "none") {
+                paragraph.style.display = "block";
+            }
+            else {
+                paragraph.style.display = "none";
+            }
+        });
+
+        // Reset Page
+        resetBtn.onclick = function () {
+
+            heading.innerHTML = "Welcome to JavaScript DOM";
+
+            heading.style.fontSize = "36px";
+
+            paragraph.style.fontSize = "18px";
+
+            paragraph.style.display = "block";
+
+            document.body.style.backgroundColor = "#f4f4f4";
+
+            input.value = "";
+        };
+
+        // onmouseover Event
+        heading.onmouseover = function () {
+
+            heading.style.color = "red";
+        };
+
+        // Mouse out effect
+        heading.onmouseout = function () {
+
+            heading.style.color = "#333";
+        };
+
+        // onchange Event
+        input.onchange = function () {
+
+            paragraph.innerHTML =
+            "You entered: " + input.value;
+        };
+
+    </script>
+
+</body>
+</html>

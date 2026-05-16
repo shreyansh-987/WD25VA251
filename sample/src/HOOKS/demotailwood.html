@@ -1,0 +1,190 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Color Boxes</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background: #ff4f87;
+    }
+
+    .box{
+      height: 200px;
+      border: 3px solid #5a1f00;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 22px;
+      font-family: Arial, sans-serif;
+    }
+
+    .box1{
+      background: #27d7ff;
+      height: 550px;
+      width: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box2{
+      background: #a8f000;
+      height: 550px;
+      width: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      row-gap: 20px;
+    }
+
+    .box3{
+      background: orange;
+      height: 550px;
+      width: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+     .box4{
+      background: rgb(202, 21, 226);
+      height: 550px;
+      width: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="box box1">
+    <h1 align="center">Box 1</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis perspiciatis, non eum quis asperiores minus, itaque quidem vero sed laudantium explicabo est repudiandae in ducimus ipsa beatae recusandae, doloremque hic.</p>
+  </div>
+
+  <div class="box box2">
+   <h1 align="center">Box 2</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis perspiciatis, non eum quis asperiores minus, itaque quidem vero sed laudantium explicabo est repudiandae in ducimus ipsa beatae recusandae, doloremque hic.</p>
+  </div>
+
+  <div class="box box3">
+    <h1 align="center">Box 3</h1>
+     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis perspiciatis, non eum quis asperiores minus, itaque quidem vero sed laudantium explicabo est repudiandae in ducimus ipsa beatae recusandae, doloremque hic.</p>
+  </div>
+
+  <div class="box box4">
+    <h1 align="center">Box 4</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis perspiciatis, non eum quis asperiores minus, itaque quidem vero sed laudantium explicabo est repudiandae in ducimus ipsa beatae recusandae, doloremque hic.</p>
+  </div>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Boxes in Row</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      background: #ff4f87;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Row Container */
+    .container{
+      display: flex;          /* Align in Row */
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .box{
+      height: 250px;
+      width: 550px;
+
+      border: 3px solid #5a1f00;
+      border-radius: 15px;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+      text-align: center;
+    }
+
+    .box1{
+      background: #27d7ff;
+    }
+
+    .box2{
+      background: #a8f000;
+    }
+
+    .box3{
+      background: orange;
+    }
+
+    .box4{
+      background: rgb(202, 21, 226);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="box box1">
+      <h1>Box 1</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="box box2">
+      <h1>Box 2</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="box box3">
+      <h1>Box 3</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="box box4">
+      <h1>Box 4</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

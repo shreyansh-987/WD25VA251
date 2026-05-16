@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops in js</title>
+</head>
+<body>
+    <script>
+    let studentList=["vikash","vinay","deepak","sneha","shiva"];
+    for(let i=0;i<studentList.length;i++){
+        console.log(studentList[i]);
+    }
+    //while----------used when the number of iterations
+    let x=0;
+    while(x<studentList.length){
+        console.log(studentList[x]);
+        x++
+    }
+    //for ...of loop
+    //iterates over the values of iterable objects (like ,arrays,strings,maps,and sets)
+    for(let y of studentList){
+        console.log(y);
+    }
+
+
+
+     let student={
+         name: "Vikas",
+         age:23,
+         isMarried:true,
+         address:{
+         streetNo:23,
+         area:"govindpuram",
+         pincode:12345,
+         city:"delhi"
+         },
+         course:"B.tech",
+         branch:"CSE",
+         year:2025,
+        }
+        for(let objkeys in student){
+        console.log(student[objkeys]);
+        }
+    </script>
+</body>
+</html>
